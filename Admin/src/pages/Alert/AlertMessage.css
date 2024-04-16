@@ -1,0 +1,36 @@
+.alert {
+    background-color: #bd2217;
+    color: white;
+    padding: 15px;
+    border-radius: 4px;
+  
+    /* Center the alert message */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  
+    /* Add padding for close button */
+    padding-right: 30px;
+  }
+  
+  .closeButton {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .closeButton:focus {
+    outline: none;
+  }
+  
+  .closeButton:hover {
+    color: rgba(255, 255, 255, 0.8);
+  }
+  

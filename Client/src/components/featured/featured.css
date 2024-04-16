@@ -1,0 +1,44 @@
+.featured{
+  width: 100%;
+  max-width: 1024px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  z-index: 1;
+}
+
+.featuredItem{
+  position: relative;
+  color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 250px;
+  flex:1
+}
+
+.featuredImg{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.featuredTitles {
+  position: absolute;
+  /* background: rgba(0, 0, 0, 0.5);  */
+  width: 100%;
+  bottom: 0px;
+  left: 60px;
+  /* padding: 10px; */
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  backdrop-filter: blur(6px); /* Adjust the blur radius as needed */
+  transition: background 0.3s ease; /* Smooth transition for background change */
+}
+
+.featuredTitles:hover {
+  background: rgba(66, 65, 65, 0.7); /* Darken the background on hover */
+}
+
+

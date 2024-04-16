@@ -1,0 +1,33 @@
+/* footer.css */
+
+.footer {
+  /* background-color: #7e7b7b; */
+   /* Background color for the footer */
+  color: #5b5959; /* Text color for the footer */
+  padding: 20px; /* Padding around the content inside the footer */
+  text-align: center; /* Center-align text */
+  position: relative; /* Positioning for social icons */
+}
+
+.fText {
+  font-size: 14px; /* Font size for the copyright text */
+}
+
+.social-icons {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.social-icons a {
+  color: #fff; /* Color for social icons */
+  text-decoration: none; /* Remove underline */
+  margin: 0 10px; /* Spacing between icons */
+  font-size: 20px; /* Size of icons */
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.social-icons a:hover {
+  color: #ff4500; /* Color on hover */
+}
