@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Reserve.css";
+import {toast} from 'react-toastify'
 import {
   faCircleArrowDown,
   faCircleXmark,
@@ -58,10 +59,11 @@ const Reserve = ({ setOpen, hotelId }) => {
           return response.data;
         })
       );
- 
+        toast.success("Reserved Successfully")
       setOpen(false);
       navigate('/');
     } catch (error) {
+      toast.error("Check the Date")
       console.error("Error occurred while processing reservation:", error);
     }
   };

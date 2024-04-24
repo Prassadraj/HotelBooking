@@ -17,6 +17,7 @@ import { format } from "date-fns";
 import { useNavigate } from "react-router-dom";
 import { SearchContext } from "../../context/searchContext";
 import { AuthContext } from "../../context/AuthContext";
+import { toast } from "react-toastify";
 
 const Header = ({ type }) => {
   const [destination, setDestination] = useState("");
@@ -50,7 +51,7 @@ const Header = ({ type }) => {
 
   const handleSearch = () => {
     if (destination == "") {
-      alert("Provid Info");
+      toast.error("Provide information")
     } else {
       dispatch({ type: "NEW_SEARCH", payload: { destination, date, options } });
       navigate("/hotels", { state: { destination, date, options } });
@@ -89,11 +90,10 @@ const Header = ({ type }) => {
         {type !== "list" && (
           <>
             <h1 className="headerTitle">
-              A lifetime of discounts? It's Genius.
+            Unlock your next adventure effortlessly, where booking your perfect stay is just a click away. 
             </h1>
             <p className="headerDesc">
-              Get rewarded for your travels – unlock instant savings of 10% or
-              more with a free Lamabooking account
+            Embrace seamless reservation and embark on unforgettable journeys.
             </p>
             {!user && (
               <Link to={"/register"}>

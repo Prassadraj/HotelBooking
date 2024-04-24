@@ -3,6 +3,7 @@ import "./resgister.css";
 import { AuthContext } from "../../context/AuthContext";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const [credential, setCredential] = useState({
@@ -23,11 +24,13 @@ const Login = () => {
 
   const handleClick = async (e) => {
     e.preventDefault();
-    console.log(credential);
+    console.log(credential)
     try {
       await axios.post("https://hotelbooking-api-bdtf.onrender.com/api/auth/register", credential);
+      toast.success("Register Successfully")
       naviagte("/login");
     } catch (error) {
+      toast.success("Somthing went Wrong")
       console.log(error);
     }
   };

@@ -3,6 +3,7 @@ import "./login.css";
 import { AuthContext } from "../../context/AuthContext";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const [credential, setCredential] = useState({
@@ -24,9 +25,11 @@ const Login = () => {
     try {
       const res = await axios.post("https://hotelbooking-api-bdtf.onrender.com/api/auth/login", credential);
       dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
+      toast.success("Login Successfully")
       naviagte("/");
     } catch (error) {
       dispatch({ type: "LOGIN_FAILURE", payload: error.response.data.details });
+      toast.success("Login Failed")
     }
   };
 
