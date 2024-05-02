@@ -90,9 +90,9 @@ export const countByType = async (req, res, next) => {
       .json([
         { type: "hotel", count: hotelCount },
         { type: "apartment", count: apartmentCount },
-        { type: "Resorts", count: ResortsCount },
-        { type: "Villas", count: VillasCount },
-        { type: "Cabins", count: CabinsCount },
+        { type: "resorts", count: ResortsCount },
+        { type: "villas", count: VillasCount },
+        { type: "cabins", count: CabinsCount },
       ])
       .status(200);
   } catch (error) {
