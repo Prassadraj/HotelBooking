@@ -2,13 +2,11 @@ import express from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import authRoute from "./Api/routes/auth.js";
-import hotelRoute from "./Api/routes/hotels.js";
-import roomRoute from "./Api/routes/rooms.js";
 import userRoute from "./Api/routes/users.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 
-// Load environment variables from .env file
+// Load environment variables from .env filep
 dotenv.config();
 
 const app = express();
