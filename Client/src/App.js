@@ -6,7 +6,6 @@ import axios from "axios";
 import Login from "./pages/LoginPage/Login";
 import Register from "./pages/register/Register";
 
-
 function App() {
   // axios.defaults.withCredentials = true;
 
@@ -21,7 +20,6 @@ function App() {
           <Route path="/register" element={<Register />} />
         </Routes>
       </BrowserRouter>
-
     </div>
   );
 }
