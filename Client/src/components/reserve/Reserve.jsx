@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Reserve.css";
-import {toast} from 'react-toastify'
+import { toast } from "react-toastify";
 import {
   faCircleArrowDown,
   faCircleXmark,
@@ -10,14 +10,14 @@ import {
 import useFetch from "../hooks/useFetch";
 import { useContext, useState } from "react";
 import { SearchContext } from "../../context/searchContext";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
-
-
 
 const Reserve = ({ setOpen, hotelId }) => {
   const [selectedRooms, setSelectedRooms] = useState([]);
-  const { data, error, loading } = useFetch(`https://hotelbooking-api-bdtf.onrender.com/api/hotel/room/${hotelId}`);
+  const { data, error, loading } = useFetch(
+    `https://stayfinder-blaa.onrender.com/api/hotel/room/${hotelId}`
+  );
   const { date } = useContext(SearchContext);
 
   const getDateInRange = (startDate, endDate) => {
@@ -54,16 +54,16 @@ const Reserve = ({ setOpen, hotelId }) => {
     try {
       await Promise.all(
         selectedRooms.map(async (roomId) => {
-          const url = `https://hotelbooking-api-bdtf.onrender.com/api/room/available/${roomId}`;
+          const url = `https://stayfinder-blaa.onrender.com/api/room/available/${roomId}`;
           const response = await axios.put(url, { date: GetAllDates });
           return response.data;
         })
       );
-        toast.success("Reserved Successfully")
+      toast.success("Reserved Successfully");
       setOpen(false);
-      navigate('/');
+      navigate("/");
     } catch (error) {
-      toast.error("Check the Date")
+      toast.error("Check the Date");
       console.error("Error occurred while processing reservation:", error);
     }
   };

@@ -26,11 +26,15 @@ const List = () => {
   console.log(type);
   useEffect(() => {
     if (destination) {
-      setUrl(`https://hotelbooking-api-bdtf.onrender.com/api/hotel?city=${destination}&min=${min || 0}&max=${max || 999}`);
+      setUrl(
+        `https://stayfinder-blaa.onrender.com/api/hotel?city=${destination}&min=${
+          min || 0
+        }&max=${max || 999}`
+      );
     } else if (type) {
-      setUrl(`https://hotelbooking-api-bdtf.onrender.com/api/hotel?type=${type}`);
+      setUrl(`https://stayfinder-blaa.onrender.com/api/hotel?type=${type}`);
     } else if (_id) {
-      setUrl(`https://hotelbooking-api-bdtf.onrender.com/api/hotel?_id=${_id}`);
+      setUrl(`https://stayfinder-blaa.onrender.com/api/hotel?_id=${_id}`);
     }
   }, [destination, type, min, max, _id]);
   const { data, loading, error, refetch } = useFetch(Url);

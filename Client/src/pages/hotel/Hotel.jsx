@@ -25,7 +25,9 @@ const Hotel = () => {
   const [openModel, setOpenModel] = useState(false);
   const navigate = useNavigate();
 
-  const { data, loading, error } = useFetch(`https://hotelbooking-api-bdtf.onrender.com/api/hotel/find/${id}`);
+  const { data, loading, error } = useFetch(
+    `https://stayfinder-blaa.onrender.com/api/hotel/find/${id}`
+  );
   const { user } = useContext(AuthContext);
   const { date, options } = useContext(SearchContext);
 

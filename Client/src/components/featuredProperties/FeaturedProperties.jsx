@@ -6,7 +6,9 @@ import { SearchContext } from "../../context/searchContext";
 
 const FeaturedProperties = () => {
   const { dispatch } = useContext(SearchContext);
-  const [url, setUrl] = useState("https://hotelbooking-api-bdtf.onrender.com/api/hotel?featured=true");
+  const [url, setUrl] = useState(
+    "https://stayfinder-blaa.onrender.com/api/hotel?featured=true"
+  );
   const { data, loading, error } = useFetch(url);
   const [destination, setDestination] = useState("");
   const navigate = useNavigate();

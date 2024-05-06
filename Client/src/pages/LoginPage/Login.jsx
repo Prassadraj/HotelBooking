@@ -23,13 +23,16 @@ const Login = () => {
     e.preventDefault();
     dispatch({ type: "LOGIN_START" });
     try {
-      const res = await axios.post("https://hotelbooking-api-bdtf.onrender.com/api/auth/login", credential);
+      const res = await axios.post(
+        "https://stayfinder-blaa.onrender.com/api/auth/login",
+        credential
+      );
       dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
-      toast.success("Login Successfully")
+      toast.success("Login Successfully");
       naviagte("/");
     } catch (error) {
       dispatch({ type: "LOGIN_FAILURE", payload: error.response.data.details });
-      toast.success("Login Failed")
+      toast.success("Login Failed");
     }
   };
 
@@ -55,8 +58,7 @@ const Login = () => {
         <button disabled={loading} onClick={handleClick} className="button">
           Login
         </button>
-        <Link to={'/register'}>
-        Sign Up</Link>
+        <Link to={"/register"}>Sign Up</Link>
         {error && <span>{error.message}</span>}
       </div>
     </div>

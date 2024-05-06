@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 const Featured = () => {
   const { data, loading, error } = useFetch(
-    `https://hotelbooking-api-bdtf.onrender.com/api/hotel/countByCity?cities=madrid,berlin,london`
+    `https://stayfinder-blaa.onrender.com/api/hotel/countByCity?cities=madrid,berlin,london`
   );
 
   const { dispatch } = useContext(SearchContext);
@@ -32,7 +32,7 @@ const Featured = () => {
       payload: { destination: city, date, options },
     });
     navigate("/hotels", {
-      state: { destination:city, date, options },
+      state: { destination: city, date, options },
     });
   };
   console.log(destination);

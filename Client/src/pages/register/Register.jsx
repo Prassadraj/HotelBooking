@@ -24,13 +24,16 @@ const Login = () => {
 
   const handleClick = async (e) => {
     e.preventDefault();
-    console.log(credential)
+    console.log(credential);
     try {
-      await axios.post("https://hotelbooking-api-bdtf.onrender.com/api/auth/register", credential);
-      toast.success("Register Successfully")
+      await axios.post(
+        "https://stayfinder-blaa.onrender.com/api/auth/register",
+        credential
+      );
+      toast.success("Register Successfully");
       naviagte("/login");
     } catch (error) {
-      toast.success("Somthing went Wrong")
+      toast.success("Somthing went Wrong");
       console.log(error);
     }
   };
@@ -65,7 +68,7 @@ const Login = () => {
             Sign Up
           </button>
         </Link>
-        <Link id="signIn" to={'/login'}>
+        <Link id="signIn" to={"/login"}>
           Sign In
         </Link>
 
