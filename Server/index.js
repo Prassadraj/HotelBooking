@@ -3,6 +3,8 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 import authRoute from "./Api/routes/auth.js";
 import userRoute from "./Api/routes/users.js";
+import hotelRoute from './Api/routes/hotels.js'
+import roomRoute from './Api/routes/rooms.js'
 import cookieParser from "cookie-parser";
 import cors from "cors";
 
@@ -35,6 +37,6 @@ mongoose.connect(process.env.MONGO).then(() => {
   console.log("DB Connected");
   const PORT =8080
   app.listen(PORT || 5000, () => {
-    console.log("PORT Connected}");
+    console.log(`Port Connected ${PORT}`);
   });
 });
