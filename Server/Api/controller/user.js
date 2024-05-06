@@ -2,7 +2,7 @@
 import User from "../Models/User.js";
 
 
-//updateHotel
+//update
 export const updateUser=async(req,res,next)=>{
     try {
         const {id}=req.params
@@ -23,7 +23,7 @@ export const deleteUser=async(req,res,next)=>{
         next(error)
     }
 }
-//getHotel
+//getUser
 export const getUser=async(req,res,next)=>{
     try {
         const {id}=req.params
@@ -33,7 +33,7 @@ export const getUser=async(req,res,next)=>{
         next(error)
     }
 }
-//getAll Hotels
+//getAll 
 export const getallUsers =async(req,res,next)=>{
     try {
         const getAll=await User.find()
